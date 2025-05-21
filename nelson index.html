@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Polity ch-1 </title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+    color: #333;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff00cc, #3333ff, #ff0066, #ffcc00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: hueShift 10s infinite linear;
+    margin-bottom: 40px;
+  }
+
+  @keyframes hueShift {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  .question {
+    margin-bottom: 30px;
+  }
+
+  .question p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .question ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .question ul li {
+    background: rgba(0, 0, 0, 0.05);  /* low opacity black */
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .question ul li:hover {
+    background: rgba(255, 20, 147, 0.2); /* pinkish highlight on hover */
+  }
+
+  /* This is for the glow effect on correct/incorrect answers you can use with JS */
+  .correct {
+    background-color: #c8f7c5 !important;  /* soft green */
+    box-shadow: 0 0 8px 3px #2ecc40;
+    color: #145214;
+  }
+
+  .incorrect {
+    background-color: #f7c5c5 !important;  /* soft red */
+    box-shadow: 0 0 8px 3px #e74c3c;
+    color: #7a1717;
+  }
+</style>
+
+</head>
+<body>  for styling
+<div class="question" data-correct="b">
+  <p><strong>1. ____ is called an autumn day in South Africa?</strong></p>
+  <ul>
+    <li data-option="a">10th July</li>
+    <li data-option="b">10th May</li>
+    <li data-option="c">10th March</li>
+    <li data-option="d">10th October</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>2. How many national anthems were sung in South Africa?</strong></p>
+  <ul>
+    <li data-option="a">Two</li>
+    <li data-option="b">Three</li>
+    <li data-option="c">Four</li>
+    <li data-option="d">None of these</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>3. South Africa is rich in –</strong></p>
+  <ul>
+    <li data-option="a">Coffee</li>
+    <li data-option="b">Tourism</li>
+    <li data-option="c">Gems and minerals</li>
+    <li data-option="d">All of above</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>4. Nelson Mandela was – Freedom fighter's memoir</strong></p>
+  <ul>
+    <li data-option="a">First black President of South Africa.</li>
+    <li data-option="b">Second black President of South Africa.</li>
+    <li data-option="c">Third black President of South Africa.</li>
+    <li data-option="d">None of above</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>5. South Africa became independent in the year-</strong></p>
+  <ul>
+    <li data-option="a">1947</li>
+    <li data-option="b">1964</li>
+    <li data-option="c">1994</li>
+    <li data-option="d">1995</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="d">
+  <p><strong>6. ANC stands for –</strong></p>
+  <ul>
+    <li data-option="a">Afghanistan National Congress</li>
+    <li data-option="b">Azerbaijan National Congress</li>
+    <li data-option="c">American National Congress</li>
+    <li data-option="d">African National Congress</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>7. ANC won ______ seats out of _______</strong></p>
+  <ul>
+    <li data-option="a">140,220</li>
+    <li data-option="b">252,400</li>
+    <li data-option="c">220,420</li>
+    <li data-option="d">100,200</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>8. Zenani was ______ of Nelson Mandela. Freedom fighter's memoir</strong></p>
+  <ul>
+    <li data-option="a">Wife</li>
+    <li data-option="b">Caretaker</li>
+    <li data-option="c">Daughter</li>
+    <li data-option="d">None of these</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>9. A Non-racial government means-</strong></p>
+  <ul>
+    <li data-option="a">Which is based on skin-colour.</li>
+    <li data-option="b">Which is not based on skin colour.</li>
+    <li data-option="c">Which is based on corruption.</li>
+    <li data-option="d">Which is not based on corruption.</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>10. Thabo Mbeki was sworn in as-</strong></p>
+  <ul>
+    <li data-option="a">First deputy president.</li>
+    <li data-option="b">Second deputy president.</li>
+    <li data-option="c">Third deputy president.</li>
+    <li data-option="d">Fourth deputy president.</li>
+  </ul>
+</div>
+<div class="question" data-correct="b">
+  <p><strong>11. The word ‘Transitory’ means-</strong></p>
+  <ul>
+    <li data-option="a">Permanent</li>
+    <li data-option="b">Not permanent</li>
+    <li data-option="c">For ever</li>
+    <li data-option="d">Transit</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>12. The meaning of Emancipation-</strong></p>
+  <ul>
+    <li data-option="a">Slavery</li>
+    <li data-option="b">Freedom from restriction</li>
+    <li data-option="c">Both (i) and (ii)</li>
+    <li data-option="d">None of these</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>13. Mandela joined the party Freedom fighter's memoir</strong></p>
+  <ul>
+    <li data-option="a">TMC</li>
+    <li data-option="b">ANC</li>
+    <li data-option="c">AMC</li>
+    <li data-option="d">DMK</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>14. How many Deputy Presidents were selected?</strong></p>
+  <ul>
+    <li data-option="a">One</li>
+    <li data-option="b">Two</li>
+    <li data-option="c">Three</li>
+    <li data-option="d">Four</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="d">
+  <p><strong>15. The word curtailed means-</strong></p>
+  <ul>
+    <li data-option="a">Increase</li>
+    <li data-option="b">Decrease</li>
+    <li data-option="c">Reduce</li>
+    <li data-option="d">Both (ii) and (iii)</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>16. What is Apartheid?</strong></p>
+  <ul>
+    <li data-option="a">A political system that separates people according to their race.</li>
+    <li data-option="b">A freedom movement.</li>
+    <li data-option="c">A type of government.</li>
+    <li data-option="d">A cultural practice.</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>17. Where was Apartheid practiced?</strong></p>
+  <ul>
+    <li data-option="a">South Africa</li>
+    <li data-option="b">India</li>
+    <li data-option="c">USA</li>
+    <li data-option="d">Brazil</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>18. Who was Nelson Mandela? Freedom fighter's memoir</strong></p>
+  <ul>
+    <li data-option="a">First black President of South Africa.</li>
+    <li data-option="b">Second black President of South Africa.</li>
+    <li data-option="c">Third black President of South Africa.</li>
+    <li data-option="d">None of above.</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>19. Name the autobiography of Nelson Mandela?</strong></p>
+  <ul>
+    <li data-option="a">‘Long Walk to Freedom’</li>
+    <li data-option="b">‘Freedom Fighter’</li>
+    <li data-option="c">‘Journey to South Africa’</li>
+    <li data-option="d">‘Mandela Memoirs’</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>20. Why 10th May 1994 is a historical day for the South Africans?</strong></p>
+  <ul>
+    <li data-option="a">South Africa got independence from white bondage.</li>
+    <li data-option="b">Nelson Mandela was born.</li>
+    <li data-option="c">The ANC was founded.</li>
+    <li data-option="d">Apartheid started.</li>
+  </ul>
+</div>
+<div class="question" data-correct="d">
+  <p><strong>21. Name the political party of South Africa?</strong></p>
+  <ul>
+    <li data-option="a">African People’s Party</li>
+    <li data-option="b">South African National Party</li>
+    <li data-option="c">National Freedom Alliance</li>
+    <li data-option="d">African National Congress (ANC)</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>22. How many seats did ANC win?</strong></p>
+  <ul>
+    <li data-option="a">200 seats out of 400</li>
+    <li data-option="b">252 seats out of 400</li>
+    <li data-option="c">300 seats out of 400</li>
+    <li data-option="d">350 seats out of 400</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="d">
+  <p><strong>23. Where did the ceremony take place?</strong></p>
+  <ul>
+    <li data-option="a">Cape Town</li>
+    <li data-option="b">Johannesburg</li>
+    <li data-option="c">Durban</li>
+    <li data-option="d">Sandstone amphitheatre of Union Building in Pretoria</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>24. What is the meaning of non-racial government?</strong></p>
+  <ul>
+    <li data-option="a">Government based on skin colour</li>
+    <li data-option="b">Government not based on skin colour</li>
+    <li data-option="c">Government based on corruption</li>
+    <li data-option="d">Government based on caste system</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>25. Who was Zenani?</strong></p>
+  <ul>
+    <li data-option="a">Wife of Mandela</li>
+    <li data-option="b">Caretaker</li>
+    <li data-option="c">Daughter of Mandela</li>
+    <li data-option="d">Sister of Mandela</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>26. Who accompanied Nelson Mandela on the day of inauguration?</strong></p>
+  <ul>
+    <li data-option="a">His wife</li>
+    <li data-option="b">His son</li>
+    <li data-option="c">His daughter Zenani</li>
+    <li data-option="d">No one</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>27. Who was sworn in as second Deputy President of South Africa?</strong></p>
+  <ul>
+    <li data-option="a">Thabo Mbeki</li>
+    <li data-option="b">Mr. de Klerk</li>
+    <li data-option="c">Oliver Tambo</li>
+    <li data-option="d">Walter Sisulu</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>28. What is Amphitheatre?</strong></p>
+  <ul>
+    <li data-option="a">A building without a roof with many rows of seats rising in steps</li>
+    <li data-option="b">A museum</li>
+    <li data-option="c">A stadium with a roof</li>
+    <li data-option="d">A hall with curtains</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>29. Who was the first Deputy President of South Africa?</strong></p>
+  <ul>
+    <li data-option="a">Thabo Mbeki</li>
+    <li data-option="b">Mr. de Klerk</li>
+    <li data-option="c">Nelson Mandela</li>
+    <li data-option="d">Walter Sisulu</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>30. Who oppressed the South Africans?</strong></p>
+  <ul>
+    <li data-option="a">The black community</li>
+    <li data-option="b">The white bondage</li>
+    <li data-option="c">The government of India</li>
+    <li data-option="d">The British</li>
+  </ul>
+</div>
+<div class="question" data-correct="b">
+  <p><strong>31. Which day is called ‘an autumn day’ in South Africa?</strong></p>
+  <ul>
+    <li data-option="a">10th July</li>
+    <li data-option="b">10th May</li>
+    <li data-option="c">10th March</li>
+    <li data-option="d">10th October</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>32. What were the two National Anthems of South Africa?</strong></p>
+  <ul>
+    <li data-option="a">'Nkosi Sikele i Africa' and 'Die Stem'</li>
+    <li data-option="b">'God Save the Queen' and 'Nkosi Sikele i Africa'</li>
+    <li data-option="c">'Nkosi Sikele i Africa' and 'Shosholoza'</li>
+    <li data-option="d">'Die Stem' and 'Shosholoza'</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>33. Why were two National Anthems sung in South Africa?</strong></p>
+  <ul>
+    <li data-option="a">To pay homage to the opposition</li>
+    <li data-option="b">Because of a mistake</li>
+    <li data-option="c">To confuse people</li>
+    <li data-option="d">Due to tradition</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>34. What is South Africa rich in?</strong></p>
+  <ul>
+    <li data-option="a">Coffee</li>
+    <li data-option="b">Tourism</li>
+    <li data-option="c">Gems and minerals</li>
+    <li data-option="d">Forests</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="d">
+  <p><strong>35. What did Mandela say is the greatest wealth of South Africa?</strong></p>
+  <ul>
+    <li data-option="a">Gold mines</li>
+    <li data-option="b">Natural resources</li>
+    <li data-option="c">Farming</li>
+    <li data-option="d">Its people</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>36. What does Mandela say courage means?</strong></p>
+  <ul>
+    <li data-option="a">Fearlessness</li>
+    <li data-option="b">Triumph over fear</li>
+    <li data-option="c">Bravery</li>
+    <li data-option="d">No fear</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>37. According to Mandela, who is a brave man?</strong></p>
+  <ul>
+    <li data-option="a">One who never feels afraid</li>
+    <li data-option="b">One who conquers his fear</li>
+    <li data-option="c">One who fights physically</li>
+    <li data-option="d">One who ignores fear</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>38. Which comes more naturally according to Mandela?</strong></p>
+  <ul>
+    <li data-option="a">Love</li>
+    <li data-option="b">Hate</li>
+    <li data-option="c">Fear</li>
+    <li data-option="d">Anger</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>39. How many obligations did Mandela say he has?</strong></p>
+  <ul>
+    <li data-option="a">One</li>
+    <li data-option="b">Two</li>
+    <li data-option="c">Three</li>
+    <li data-option="d">Four</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>40. What was an illusion for Mandela?</strong></p>
+  <ul>
+    <li data-option="a">Childhood freedom</li>
+    <li data-option="b">Adult freedom</li>
+    <li data-option="c">Political freedom</li>
+    <li data-option="d">Economic freedom</li>
+  </ul>
+</div>
+<div class="question" data-correct="d">
+  <p><strong>41. What is the actual freedom according to Mandela?</strong></p>
+  <ul>
+    <li data-option="a">To live without rules</li>
+    <li data-option="b">To do whatever one wishes</li>
+    <li data-option="c">To have political power</li>
+    <li data-option="d">To live with dignity and self-respect</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>42. For what did Mandela transform himself?</strong></p>
+  <ul>
+    <li data-option="a">For wealth and power</li>
+    <li data-option="b">For the hunger of freedom</li>
+    <li data-option="c">For political status</li>
+    <li data-option="d">For personal fame</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>43. Who accompanied Nelson Mandela on the day of inauguration?</strong></p>
+  <ul>
+    <li data-option="a">His daughter Zenani</li>
+    <li data-option="b">His wife</li>
+    <li data-option="c">His mother</li>
+    <li data-option="d">His son</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>44. Who was sworn in as second Deputy President of South Africa?</strong></p>
+  <ul>
+    <li data-option="a">Mr. De Klerk</li>
+    <li data-option="b">Thabo Mbeki</li>
+    <li data-option="c">Oliver Tambo</li>
+    <li data-option="d">Walter Sisulu</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>45. What is an amphitheatre?</strong></p>
+  <ul>
+    <li data-option="a">A building without a roof with many rows of seats rising in steps</li>
+    <li data-option="b">A circular garden</li>
+    <li data-option="c">A tall tower</li>
+    <li data-option="d">A stadium with a roof</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>46. Who was the first Deputy President of South Africa?</strong></p>
+  <ul>
+    <li data-option="a">Mr. De Klerk</li>
+    <li data-option="b">Thabo Mbeki</li>
+    <li data-option="c">Oliver Tambo</li>
+    <li data-option="d">Walter Sisulu</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="d">
+  <p><strong>47. Who oppressed the South Africans?</strong></p>
+  <ul>
+    <li data-option="a">The black community</li>
+    <li data-option="b">The government</li>
+    <li data-option="c">The African National Congress</li>
+    <li data-option="d">The white bondage</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>48. What is the meaning of non-racial government?</strong></p>
+  <ul>
+    <li data-option="a">Government based on race</li>
+    <li data-option="b">Government not based on skin colour or race</li>
+    <li data-option="c">Government based on corruption</li>
+    <li data-option="d">Government based on power</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>49. What were the two National Anthems of South Africa?</strong></p>
+  <ul>
+    <li data-option="a">God Save the Queen and Nkosi Sikele i Africa</li>
+    <li data-option="b">Die Stem and God Save the Queen</li>
+    <li data-option="c">'Nkosi Sikele i Africa' and 'Die Stem'</li>
+    <li data-option="d">Shosholoza and Die Stem</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>50. When did the Anglo-Boer War take place?</strong></p>
+  <ul>
+    <li data-option="a">A few years before Mandela's birth</li>
+    <li data-option="b">During Mandela's childhood</li>
+    <li data-option="c">After Mandela became president</li>
+    <li data-option="d">During the 21st century</li>
+  </ul>
+</div>
+<div class="question" data-correct="d">
+  <p><strong>51. How old was Mandela in the last decade of the twentieth century?</strong></p>
+  <ul>
+    <li data-option="a">In his fourth decade</li>
+    <li data-option="b">In his sixth decade</li>
+    <li data-option="c">In his seventh decade</li>
+    <li data-option="d">In his eighth decade</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>52. What pained Mandela on the day of the inauguration?</strong></p>
+  <ul>
+    <li data-option="a">He felt proud</li>
+    <li data-option="b">He was happy with the ceremony</li>
+    <li data-option="c">He could not thank the patriots before him</li>
+    <li data-option="d">He was worried about his future</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>53. Name two patriots before Mandela.</strong></p>
+  <ul>
+    <li data-option="a">Oliver Tambo and Walter Sisulu</li>
+    <li data-option="b">Thabo Mbeki and De Klerk</li>
+    <li data-option="c">Zenani and Mandela's wife</li>
+    <li data-option="d">Mandela and De Klerk</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>54. Mandela’s country is rich in ________.</strong></p>
+  <ul>
+    <li data-option="a">Forests and lakes</li>
+    <li data-option="b">Minerals and gems</li>
+    <li data-option="c">Agriculture</li>
+    <li data-option="d">Technology</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>55. From whom did Mandela learn the meaning of courage?</strong></p>
+  <ul>
+    <li data-option="a">His family</li>
+    <li data-option="b">Comrades in struggle</li>
+    <li data-option="c">Teachers</li>
+    <li data-option="d">World leaders</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>56. What does Mandela mean by courage?</strong></p>
+  <ul>
+    <li data-option="a">Absence of fear</li>
+    <li data-option="b">Triumph over fear</li>
+    <li data-option="c">Being fearless</li>
+    <li data-option="d">Not caring about fear</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="d">
+  <p><strong>57. Where did Mandela see a glimmer of humanity even in the darkest times in prison?</strong></p>
+  <ul>
+    <li data-option="a">Among fellow prisoners</li>
+    <li data-option="b">In the prison courtyard</li>
+    <li data-option="c">At the prison gates</li>
+    <li data-option="d">In one of the prison guards</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>58. What does Mandela say about man's goodness?</strong></p>
+  <ul>
+    <li data-option="a">It is easily extinguished</li>
+    <li data-option="b">It is rare</li>
+    <li data-option="c">It is a flame that can be hidden but never extinguished</li>
+    <li data-option="d">It is obvious</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>59. How many obligations does a man have in life?</strong></p>
+  <ul>
+    <li data-option="a">One</li>
+    <li data-option="b">Twin obligations</li>
+    <li data-option="c">Three</li>
+    <li data-option="d">Many</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>60. In what kind of society can a person fulfill twin obligations?</strong></p>
+  <ul>
+    <li data-option="a">In a civil society</li>
+    <li data-option="b">In a chaotic society</li>
+    <li data-option="c">In an oppressive society</li>
+    <li data-option="d">In an isolated society</li>
+  </ul>
+</div>
+<div class="question" data-correct="b">
+  <p><strong>61. What sort of man was isolated and punished in South Africa?</strong></p>
+  <ul>
+    <li data-option="a">A white man</li>
+    <li data-option="b">A man of colour who wanted to fulfil his twin obligations</li>
+    <li data-option="c">A foreigner</li>
+    <li data-option="d">A politician</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>62. What did Mandela find attempting to serve his people?</strong></p>
+  <ul>
+    <li data-option="a">Great success</li>
+    <li data-option="b">Support from the government</li>
+    <li data-option="c">He was prevented from fulfilling his duty as a son, brother, father, and husband</li>
+    <li data-option="d">Freedom</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>63. What sort of freedom did Mandela want as a student?</strong></p>
+  <ul>
+    <li data-option="a">Freedom to stay out at night, read what he pleased, and go where he liked</li>
+    <li data-option="b">Freedom from oppression</li>
+    <li data-option="c">Freedom to travel abroad</li>
+    <li data-option="d">Freedom to speak publicly</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>64. When did Mandela yearn for basic and honourable freedom?</strong></p>
+  <ul>
+    <li data-option="a">As a young man in Johannesburg</li>
+    <li data-option="b">During his childhood</li>
+    <li data-option="c">After becoming President</li>
+    <li data-option="d">While in prison</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>65. What sort of freedom did Mandela want as a young man?</strong></p>
+  <ul>
+    <li data-option="a">Basic and honourable freedom</li>
+    <li data-option="b">Absolute freedom</li>
+    <li data-option="c">Political freedom</li>
+    <li data-option="d">Freedom to travel</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>66. Give an example of basic and honourable freedom according to Mandela.</strong></p>
+  <ul>
+    <li data-option="a">Freedom of speech</li>
+    <li data-option="b">Freedom of earning his keep</li>
+    <li data-option="c">Freedom to vote</li>
+    <li data-option="d">Freedom of religion</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>67. What was Mandela’s greater hunger for?</strong></p>
+  <ul>
+    <li data-option="a">Wealth</li>
+    <li data-option="b">Freedom of his people</li>
+    <li data-option="c">Education</li>
+    <li data-option="d">Power</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>68. What did animate Mandela’s life?</strong></p>
+  <ul>
+    <li data-option="a">Desire for power</li>
+    <li data-option="b">Desire for freedom of his people to live with dignity and self respect</li>
+    <li data-option="c">Desire for wealth</li>
+    <li data-option="d">Desire for fame</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>69. Does Mandela think himself more virtuous or self-sacrificing than others?</strong></p>
+  <ul>
+    <li data-option="a">Yes, he does</li>
+    <li data-option="b">No, he does not</li>
+    <li data-option="c">Sometimes</li>
+    <li data-option="d">He never thought about it</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>70. What type of man is behind the bars of prejudice and narrow-mindedness?</strong></p>
+  <ul>
+    <li data-option="a">A man who takes away another man’s freedom</li>
+    <li data-option="b">A man who is poor</li>
+    <li data-option="c">A man who is ignorant</li>
+    <li data-option="d">A man who is strong</li>
+  </ul>
+</div>
+<div class="question" data-correct="a">
+  <p><strong>71. What type of man is a prisoner of hatred?</strong></p>
+  <ul>
+    <li data-option="a">A man who takes away another man’s freedom</li>
+    <li data-option="b">A man who is violent</li>
+    <li data-option="c">A man who is angry</li>
+    <li data-option="d">A man who is poor</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>72. Who are robbed of their humanity?</strong></p>
+  <ul>
+    <li data-option="a">Only the oppressed</li>
+    <li data-option="b">The oppressed and the oppressor</li>
+    <li data-option="c">Only the oppressors</li>
+    <li data-option="d">Only those in prison</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>73. What is the meaning of the word “profound” in the sentence: “All of us will spend many years, if not generations, recovering from that profound hurt”?</strong></p>
+  <ul>
+    <li data-option="a">Light and vain</li>
+    <li data-option="b">Normal</li>
+    <li data-option="c">Deep and strong</li>
+    <li data-option="d">Temporary</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>74. What day is called ‘an autumn day’ in South Africa?</strong></p>
+  <ul>
+    <li data-option="a">10th May</li>
+    <li data-option="b">10th July</li>
+    <li data-option="c">10th March</li>
+    <li data-option="d">10th October</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>75. How many national anthems were sung in South Africa?</strong></p>
+  <ul>
+    <li data-option="a">Two</li>
+    <li data-option="b">Three</li>
+    <li data-option="c">Four</li>
+    <li data-option="d">None</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>76. What is South Africa rich in?</strong></p>
+  <ul>
+    <li data-option="a">Coffee</li>
+    <li data-option="b">Tourism</li>
+    <li data-option="c">Gems and minerals</li>
+    <li data-option="d">All of the above</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>77. Who was the first black President of South Africa?</strong></p>
+  <ul>
+    <li data-option="a">Nelson Mandela</li>
+    <li data-option="b">Thabo Mbeki</li>
+    <li data-option="c">Mr. de Klerk</li>
+    <li data-option="d">Oliver Tambo</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>78. In which year did South Africa become independent?</strong></p>
+  <ul>
+    <li data-option="a">1947</li>
+    <li data-option="b">1964</li>
+    <li data-option="c">1994</li>
+    <li data-option="d">1995</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="d">
+  <p><strong>79. What does ANC stand for?</strong></p>
+  <ul>
+    <li data-option="a">Afghanistan National Congress</li>
+    <li data-option="b">Azerbaijan National Congress</li>
+    <li data-option="c">American National Congress</li>
+    <li data-option="d">African National Congress</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>80. How many seats did ANC win out of 400?</strong></p>
+  <ul>
+    <li data-option="a">140</li>
+    <li data-option="b">252</li>
+    <li data-option="c">220</li>
+    <li data-option="d">100</li>
+  </ul>
+</div>
+<div class="question" data-correct="c">
+  <p><strong>81. Who was Zenani in relation to Nelson Mandela?</strong></p>
+  <ul>
+    <li data-option="a">Wife</li>
+    <li data-option="b">Caretaker</li>
+    <li data-option="c">Daughter</li>
+    <li data-option="d">Sister</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>82. What does a non-racial government mean?</strong></p>
+  <ul>
+    <li data-option="a">Based on skin color</li>
+    <li data-option="b">Not based on skin color</li>
+    <li data-option="c">Based on corruption</li>
+    <li data-option="d">None of these</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>83. Who was sworn in as the first Deputy President of South Africa?</strong></p>
+  <ul>
+    <li data-option="a">Thabo Mbeki</li>
+    <li data-option="b">Nelson Mandela</li>
+    <li data-option="c">Mr. de Klerk</li>
+    <li data-option="d">Oliver Tambo</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>84. What does the word ‘Transitory’ mean?</strong></p>
+  <ul>
+    <li data-option="a">Not permanent</li>
+    <li data-option="b">Permanent</li>
+    <li data-option="c">Forever</li>
+    <li data-option="d">Transit</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>85. What is the meaning of ‘Emancipation’?</strong></p>
+  <ul>
+    <li data-option="a">Slavery</li>
+    <li data-option="b">Freedom from restriction</li>
+    <li data-option="c">Both slavery and freedom</li>
+    <li data-option="d">None of these</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>86. How many Deputy Presidents were selected in South Africa’s government?</strong></p>
+  <ul>
+    <li data-option="a">One</li>
+    <li data-option="b">Two</li>
+    <li data-option="c">Three</li>
+    <li data-option="d">Four</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="d">
+  <p><strong>87. What does the word ‘curtailed’ mean?</strong></p>
+  <ul>
+    <li data-option="a">Increase</li>
+    <li data-option="b">Decrease</li>
+    <li data-option="c">Extend</li>
+    <li data-option="d">Both decrease and reduce</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>88. Mandela joined which political party?</strong></p>
+  <ul>
+    <li data-option="a">TMC</li>
+    <li data-option="b">ANC</li>
+    <li data-option="c">AMC</li>
+    <li data-option="d">DMK</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>89. On which date was Mandela sworn in as the first black president?</strong></p>
+  <ul>
+    <li data-option="a">10th May 1994</li>
+    <li data-option="b">10th May 1990</li>
+    <li data-option="c">10th July 1994</li>
+    <li data-option="d">10th October 1994</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>90. Where did the inauguration ceremony take place?</strong></p>
+  <ul>
+    <li data-option="a">Cape Town</li>
+    <li data-option="b">Union Buildings, Pretoria</li>
+    <li data-option="c">Johannesburg</li>
+    <li data-option="d">Durban</li>
+  </ul>
+</div>
+<div class="question" data-correct="a">
+  <p><strong>91. What is the meaning of ‘Apartheid’?</strong></p>
+  <ul>
+    <li data-option="a">A political system that separates people according to their race</li>
+    <li data-option="b">A type of government</li>
+    <li data-option="c">An economic policy</li>
+    <li data-option="d">A cultural festival</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>92. What was the main wealth of South Africa according to Mandela?</strong></p>
+  <ul>
+    <li data-option="a">Gold and diamonds</li>
+    <li data-option="b">Its people</li>
+    <li data-option="c">Tourism</li>
+    <li data-option="d">Agriculture</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>93. What does Mandela say about courage?</strong></p>
+  <ul>
+    <li data-option="a">It is the absence of fear</li>
+    <li data-option="b">It is an inherited trait</li>
+    <li data-option="c">It is the triumph over fear</li>
+    <li data-option="d">It is easy to achieve</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="d">
+  <p><strong>94. How many national anthems were sung in South Africa after independence?</strong></p>
+  <ul>
+    <li data-option="a">One</li>
+    <li data-option="b">Three</li>
+    <li data-option="c">Four</li>
+    <li data-option="d">Two</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>95. What does ‘non-racial government’ mean?</strong></p>
+  <ul>
+    <li data-option="a">Government not based on race or skin color</li>
+    <li data-option="b">Government based on corruption</li>
+    <li data-option="c">Government based on class</li>
+    <li data-option="d">Government based on wealth</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>96. Who was the second Deputy President sworn in with Mandela?</strong></p>
+  <ul>
+    <li data-option="a">Thabo Mbeki</li>
+    <li data-option="b">Mr. de Klerk</li>
+    <li data-option="c">Oliver Tambo</li>
+    <li data-option="d">Walter Sisulu</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="c">
+  <p><strong>97. Which political party did Mandela represent?</strong></p>
+  <ul>
+    <li data-option="a">DMK</li>
+    <li data-option="b">TMC</li>
+    <li data-option="c">ANC</li>
+    <li data-option="d">AMC</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="a">
+  <p><strong>98. What is the autobiography of Nelson Mandela called?</strong></p>
+  <ul>
+    <li data-option="a">Long Walk to Freedom</li>
+    <li data-option="b">Freedom Fighter</li>
+    <li data-option="c">The Road to Democracy</li>
+    <li data-option="d">Mandela’s Journey</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="b">
+  <p><strong>99. Which day is called an ‘autumn day’ in South Africa?</strong></p>
+  <ul>
+    <li data-option="a">10th July</li>
+    <li data-option="b">10th May</li>
+    <li data-option="c">10th March</li>
+    <li data-option="d">10th October</li>
+  </ul>
+</div>
+
+<div class="question" data-correct="d">
+  <p><strong>100. How was the morning of 10th May 1994 described?</strong></p>
+  <ul>
+    <li data-option="a">Cloudy and cold</li>
+    <li data-option="b">Rainy</li>
+    <li data-option="c">Foggy</li>
+    <li data-option="d">Bright and clear</li>
+  </ul>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
