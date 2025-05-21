@@ -76,6 +76,29 @@
     color: #7a1717;
   }
 </style>
+  <script>
+  document.querySelectorAll('.question ul li').forEach(option => {
+    option.addEventListener('click', function () {
+      const question = this.closest('.question');
+      const correct = question.getAttribute('data-correct');
+      
+      // Disable all options in this question
+      question.querySelectorAll('li').forEach(li => {
+        li.style.pointerEvents = 'none'; // Prevent further clicks
+        li.classList.remove('correct', 'incorrect'); // Remove any previous classes
+      });
+
+      if (this.getAttribute('data-option') === correct) {
+        this.classList.add('correct');
+      } else {
+        this.classList.add('incorrect');
+        // Optionally highlight the correct answer too:
+        question.querySelector(`li[data-option="${correct}"]`).classList.add('correct');
+      }
+    });
+  });
+  </script>
+  
   <h1>Nelson Mandela ></h1>
 
 </head>
