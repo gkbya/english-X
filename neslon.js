@@ -1,26 +1,32 @@
-<script>
-  document.querySelectorAll('.question').forEach(question => {
-    const correctOption = question.dataset.correct;
+document.addEventListener("DOMContentLoaded", () => {
+  const questions = document.querySelectorAll(".question");
 
-    question.querySelectorAll('li').forEach(option => {
-      option.addEventListener('click', () => {
-        // Prevent selecting again
-        if (question.classList.contains('answered')) return;
-        question.classList.add('answered');
+  questions.forEach((question) => {
+    const correctOption = question.dataset.correct || question.dataset.answer;
+    const options = question.querySelectorAll("li");
+
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        // Prevent multiple attempts
+        if (question.classList.contains("answered")) return;
+        question.classList.add("answered");
 
         const selected = option.dataset.option;
 
+        // Mark selected option
         if (selected === correctOption) {
-          option.style.backgroundColor = '#4CAF50'; // green
-          option.style.color = 'white';
+          option.style.backgroundColor = "lightgreen";
         } else {
-          option.style.backgroundColor = '#f44336'; // red
-          option.style.color = 'white';
-          // Show the correct one
-          question.querySelector(`li[data-option="${correctOption}"]`).style.backgroundColor = '#4CAF50';
-          question.querySelector(`li[data-option="${correctOption}"]`).style.color = 'white';
+          option.style.backgroundColor = "lightcoral";
+
+          // Also highlight the correct option
+          options.forEach((opt) => {
+            if (opt.dataset.option === correctOption) {
+              opt.style.backgroundColor = "lightgreen";
+            }
+          });
         }
       });
     });
   });
-</script>
+});
